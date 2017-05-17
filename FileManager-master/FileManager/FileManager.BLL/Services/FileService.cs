@@ -63,9 +63,13 @@ namespace FileManager.BLL.Services
         }
         public List<FileDto> SearchFiles(string namePart, IPrincipal user)
         {
-            if (user.IsInRole("Administrator"))
-                return GetAllFiles().Where(f => f.FilePath.Contains(namePart)).ToList();
-            return GetAllPublicFiles().Where(f => f.FilePath.Contains(namePart)).ToList();
+            if (namePart != "")
+            {
+                if (user.IsInRole("Administrator"))
+                    return GetAllFiles().Where(f => f.FilePath.Contains(namePart)).ToList();
+                return GetAllPublicFiles().Where(f => f.FilePath.Contains(namePart)).ToList();
+            }
+            return new List<FileDto>();
         }
         public void InsertFile(FileDto file)
         {
