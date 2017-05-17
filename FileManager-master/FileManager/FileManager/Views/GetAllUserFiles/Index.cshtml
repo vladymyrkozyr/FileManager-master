@@ -1,0 +1,26 @@
+﻿@model IEnumerable<FileManager.Models.File>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>My Files</h2>
+
+<table>
+    <tr>
+        <th>File Name</th>
+        <th>File Access</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Path.GetFileName(item.FilePath)</td>
+            <td>@(item.FileAccess?"Private":"Public")</td>
+            <td>
+                <div class="btn btn-default">@Html.ActionLink("Download", "Download", new {filePath = item.FilePath})</div>
+            </td>
+
+            <td>
+                <div class="btn btn-default">@Html.ActionLink("Delete", "DeleteFile", new {id = item.FileId})</div>
+            </td>
+        </tr>
+    }
+</table>

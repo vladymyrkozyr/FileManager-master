@@ -1,0 +1,20 @@
+﻿@model IEnumerable<FileManager.Models.File>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Public Files</h2>
+
+<table>
+    <tr>
+        <th>File Name</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Path.GetFileName(item.FilePath)</td>
+            <td>
+                <div class="btn btn-default">@Html.ActionLink("Download", "Download", new {filePath = item.FilePath})</div>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,5 @@
+E:\Desktop\EPAM\MVC\FileManager\Test\Test\bin\Debug\Test.exe.config
+E:\Desktop\EPAM\MVC\FileManager\Test\Test\bin\Debug\Test.exe
+E:\Desktop\EPAM\MVC\FileManager\Test\Test\bin\Debug\Test.pdb
+E:\Desktop\EPAM\MVC\FileManager\Test\Test\obj\Debug\Test.exe
+E:\Desktop\EPAM\MVC\FileManager\Test\Test\obj\Debug\Test.pdb

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Upload File</h2>
+
+@using (Html.BeginForm("Index", "UploadFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" class="btn btn-default"/>
+    <br/>
+    <p>Make this file private
+    @Html.CheckBox("fileAccess")
+    </p>
+    <br/>
+    <input type="submit" value="OK" class="btn btn-default" />
+}
